@@ -1,0 +1,18 @@
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': categorieStatus === 'disponible',
+  'list-group-item-danger': categorieStatus === 'indisponible'}">
+
+
+  <h4 [ngStyle]="{color: getColor()}">Catégorie : {{ categorieName }} -- Etat : {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="categorieName">
+
+  <button class="btn btn-success"
+          *ngIf="categorieStatus === 'indisponible'"
+          (click)="onSwitch()">disposer
+  </button>
+  <button class="btn btn-danger"
+          *ngIf="categorieStatus === 'disponible'"
+          (click)="onSwitch()">indisposer
+  </button>
+
+
+</li>

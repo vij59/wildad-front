@@ -1,0 +1,14 @@
+<div class="col-xs-12">
+  <h2>Mes catégories</h2>
+
+  <p> Mis à jour le : {{ lastUpdate | async | date: 'dd/MM/yyyy -- hh-mm-ss' | uppercase }}</p>
+
+  <ul class="list-group">
+    <app-categories *ngFor="let categorie of categories; let i = index"
+                    [categorieName]="categorie.name"
+                    [categorieStatus]="categorie.status"
+                    [index]="i">
+    </app-categories>
+
+  </ul>
+</div>
